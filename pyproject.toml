@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naavre-notebook-testsuite"
+version = "0.1.0"
+description = "Starter validation project for Stage 2 notebook execution"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "nbclient>=0.10,<1",
+  "nbformat>=5.10,<6",
+  "ipykernel>=6.29,<7",
+  "numpy>=1.26,<3",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8,<9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
